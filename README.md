@@ -4,6 +4,22 @@ This is a simple file transfer system consisting of a server and a client, imple
 
 ## How it work's?
 
+### Example: 
+```css
+Time: 0s                Time: 5s                Time: 10s
+Client: list_files()   Client: get_file(foo.txt) Client: get_file(bar.txt)
+Server: send_list()    Server: send_file(foo.txt)Server: send_file(bar.txt)
+Cache: -               Cache: foo.txt           Cache: foo.txt, bar.txt
+```
+
+In this scenario, at time 0s, the client sends a list_files() request to the server. The server responds with a send_list() message, containing a list of files in the cache.
+
+At time 5s, the client sends a get_file(foo.txt) request to the server. Since foo.txt is in the cache, the server responds with a send_file(foo.txt) message, sending the file from the cache.
+
+At time 10s, the client sends a get_file(bar.txt) request to the server. Since bar.txt is not in the cache, the server responds with a send_file(bar.txt) message, sending the file from disk.The cache adds bar.txt.
+
+### Workflow
+
 1.  The client establishes a TCP connection with the server.
 2.  The client sends a "list" command to the server, requesting a list of available files.
 3.  The server responds with a list of filenames.

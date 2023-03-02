@@ -103,7 +103,7 @@ In this code, server_socket.accept() blocks until a client connects to the serve
 
 The handle_client() function is responsible for handling the client's requests. It receives the client's socket and address as arguments, and reads and writes data using the socket. Because each client is handled in a separate thread, multiple clients can be handled simultaneously without blocking the main thread.
 
-##Cache
+## Cache
 
 The server uses a cache to store frequently accessed files, in order to improve performance by reducing disk I/O. The cache is implemented as a directory on the server's disk, where files are stored temporarily as clients download or upload them.
 

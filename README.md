@@ -4,15 +4,15 @@ This is a simple file transfer system consisting of a server and a client, imple
 
 ## How it work's?
 
-1.The client establishes a TCP connection with the server.
-2.The client sends a "list" command to the server, requesting a list of available files.
-3.The server responds with a list of filenames.
-4.The client sends a "get" command to the server, requesting a specific file.
-5.If the requested file is in the server cache, the server sends the file contents from memory.
-6.If the requested file is not in the cache, the server reads the file from disk and sends it to the client. The server also adds the file to the cache.
-7.The client receives the file contents and saves it to a local directory.
-8.Steps 4-7 can be repeated multiple times for different files.
-9.When the client is finished, it sends a "quit" command to the server to close the TCP connection.
+1.  The client establishes a TCP connection with the server.
+2.  The client sends a "list" command to the server, requesting a list of available files.
+3.  The server responds with a list of filenames.
+4.  The client sends a "get" command to the server, requesting a specific file.
+5. If the requested file is in the server cache, the server sends the file contents from memory.
+6. If the requested file is not in the cache, the server reads the file from disk and sends it to the client. The server also adds the file to the cache.
+7. The client receives the file contents and saves it to a local directory.
+8. Steps 4-7 can be repeated multiple times for different files.
+9.  When the client is finished, it sends a "quit" command to the server to close the TCP connection.
 
 ## Architecture
 The system follows a client-server architecture, where the client sends requests to the server, and the server responds with the requested files. The communication between the client and the server is done over a TCP connection. The system uses multi-threading to handle multiple client connections concurrently.
@@ -21,8 +21,11 @@ The system follows a client-server architecture, where the client sends requests
 The system is implemented in Python 3. The following Python modules are used:
 
 ```socket```: for establishing a TCP connection between the client and the server.
+
 ```threading```: for handling multiple client connections concurrently.
+
 ```os``` and ```shutil```: for managing files and directories.
+
 ```time```: for calculating the age of cached files.
 
 ## Protocols
@@ -30,6 +33,7 @@ The system is implemented in Python 3. The following Python modules are used:
 The system uses a custom text-based protocol to communicate between the client and the server. The protocol consists of two commands:
 
 ```list```: sends a list of filenames that are available on the server.
+
 ```get <filename>```: sends the contents of the specified file to the client.
 
 ## Design Decisions

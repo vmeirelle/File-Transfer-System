@@ -102,3 +102,10 @@ Another critical problem that the system solves is the size of the file cache. T
   
 ## Conclusion
 In conclusion, the file transfer system is a simple but effective solution for transferring files between a server and multiple clients. The system's architecture is based on a client-server model, and the communication between the client and the server is done using a custom text-based protocol over a TCP connection. The system's design decisions, such as file caching and multi-threading, address critical problems such as slow file transfers and limited memory resources. Overall, the system is a practical solution for transferring files over a network in a secure and efficient manner.
+
+## Demonstration
+
+
+
+https://user-images.githubusercontent.com/50549048/222318364-acaf8bb9-64fe-4577-8526-65eb20030479.mp4
+
